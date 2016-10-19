@@ -10,3 +10,7 @@ set_include_path(__DIR__);
 require 'models/client.php';
 require 'models/sensor.php';
 require 'models/site.php';
+require 'models/sensorDeployed.php';
+require 'models/sensorTimeSeries.php';
+require 'models/turbine.php';
+require 'models/turbineDeployed.php';
