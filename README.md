@@ -4,10 +4,12 @@ Crimson 12's Final Project for Data and Systems, IU MSIS Core 2016.
 Progress:
 
 Database [==========] 100%
-  Started: 10/18
-  Completed: 10/19
+  
+Started: 10/18
+  
+Completed: 10/19
 
-API [=         ] 10%
+API [==        ] 20%
  
 Started: 10/19
 
@@ -19,6 +21,10 @@ Progress:
 <li>Cient</li>
 <li>Sensor</li>
 <li>Site</li>
+<li>Turbine</li>
+<li>Sensor Deployed</li>
+<li>Turbine Deployed</li>
+<li>Sensor Time Series</li>
 </ul>
 </ul>
   
