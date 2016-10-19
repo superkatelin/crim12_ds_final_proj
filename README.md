@@ -2,9 +2,11 @@
 Crimson 12's Final Project for Data and Systems, IU MSIS Core 2016.
 
 Progress:
+
 Database [==========] 100%
   Started: 10/18
   Completed: 10/19
+
 API [          ] 0%
 
 Project Description:
