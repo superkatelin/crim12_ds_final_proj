@@ -1,0 +1,28 @@
+/*Main content divs*/
+.content {
+    
+}
+
+/*Navbar editing*/
+.navbar-custom{
+    
+}
+
+/*sidebars*/
+.left {
+    padding-left: 0px;
+    width: 15%;
+    float: left;
+}
+
+/*padding for pages with sidebar*/
+.main {
+    width: 80%;
+    float: left;    
+}
+
+/*this is to do somethign pretty while listing sla notes*/
+.sla {
+    padding-left: 5%;
+    width: 90%;
+}
