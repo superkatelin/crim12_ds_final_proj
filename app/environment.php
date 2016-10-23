@@ -15,3 +15,4 @@ require 'models/sensorTimeSeries.php';
 require 'models/turbine.php';
 require 'models/turbineDeployed.php';
 require 'models/slaNote.php';
+require 'models/turbineSerial.php';
