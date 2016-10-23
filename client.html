@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Client Information</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/master.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src="js/client.app.js"></script>
+    </head>
+    <body ng-app="app">
+        <nav class="navbar navbar-default navbar-custom">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="#">Client<span class="sr-only">(current)</span></a></li>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container content" ng-controller="ClientController as clCtl">
+            <div class="left">
+                <p><a href ng-click="clCtl.selectCid(1)">Hoosier Energy</a></p>
+                <p><a href ng-click="clCtl.selectCid(2)">Pacific Tidal Energy</a></p>
+            </div>
+            <div class="main">
+                <div ng-repeat="row in clCtl.data">
+                    <h2>{{row.clientName}}</h2>
+                    <p>
+                        <b>Description:</b> {{row.clientDescription}}
+                    </p>
+                    <p>
+                        <b>Sector:</b> {{row.gicsSector}}
+                    </p>
+                    <p>
+                        <b>Subindustry:</b> {{row.gicsSubIndustry}}
+                    </p>
+                    <p>
+                        <b>Headquarters:</b> {{row.headquarters}}
+                    </p>
+                    <hr>
+                    <h3>Client Sites</h3>
+                    <div ng-repeat="row in clCtl.siteData">
+                        <b>{{row.siteName}}</b>
+                    </div>
+                    <div ng-show="!{{clCtl.show()}}">
+                        <p>We currently have no turbines at this client site.</p>
+                    </div>
+                    <hr>
+                    <h3>Service Level Agreement Notes</h3>
+                    <div ng-repeat="row in clCtl.slaData" class="sla">
+                        <p>{{row.note}}
+                        <br>
+                        <b>By:</b> {{row.name}}</p>
+                    </div>
+                    <hr>
+                    <h3>Add a Service Level Agreement Note</h3>
+                    <form class="form-horizontal" ng-submit="clCtl.addSlaNote()">
+                      <div class="form-group">
+                        <label for="Name" class="col-sm-2 control-label">Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" ng-model="clCtl.newSlaNote.name">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="slaNote" class="col-sm-2 control-label">Service Level Agreement Note</label>
+                        <div class="col-sm-10">
+                          <textarea rows="5" name="slaNote" id="slaNote" class="form-control" placeholder="Insert SLA notes here." ng-model="clCtl.newSlaNote.note"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group" ng-show=false>
+                        <div class="col-sm-10">
+                          <input type="number" class="form-control" id="clienId" name="clientId" value={{clCtl.data.clientId}} ng-model="clCtl.newSlaNote.clientId">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-default">Save</button>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+            </div> 
+        </div>
+    </body>
+</html>
