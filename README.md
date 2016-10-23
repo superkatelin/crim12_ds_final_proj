@@ -53,6 +53,7 @@ Progress:
 <li>Client</li>
 </ul>
 </li>
+</ul>
 
 CSS [= ] 10%
 
