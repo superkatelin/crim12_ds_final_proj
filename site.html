@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>Site Information</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/master.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script type="text/javascript" src="js/site.app.js"></script>
+    </head>
+    <body ng-app="app">
+        <nav class="navbar navbar-default navbar-custom">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="client.html">Client</a></li>
+                <li class="active"><a href="#">Site <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <div class="container content" ng-controller="SiteController as sCtl">
+            <div class="left">
+                <p><a href ng-click="sCtl.selectSid(1)">Emerald Waters Plant</a></p>
+                <p><a href ng-click="sCtl.selectSid(2)">Smith Energy Complex</a></p>
+                <p><a href ng-click="sCtl.selectSid(3)">King County Farm</a></p>
+            </div>
+            <div class="main">
+                <div ng-repeat="row in sCtl.data">
+                    <h3>{{row.siteName}}</h3>
+                    <p><b>Description:</b> {{row.siteDescription}}</p>
+                    <p><b>Primary Contact:</b> {{row.primaryContact}}</p>
+                    <p><b>Capacity:</b> {{row.capacity}}</p>
+                    <p><b>Commercial Date:</b> {{row.commercialDate | date}}</p>
+                    <b>Address:</b> 
+                    <div class = "address">{{row.addrLine1}}
+                    <br>
+                    {{row.addrLine2}}
+                    <br>
+                    {{row.addrCity}}, {{row.addrState}} {{row.addrZip}}
+                    <br>
+                    {{row.addrCountry}}
+                    </div>
+                    <hr>
+                    <h3>Turbines On Site</h3>
+                    <div ng-repeat="turb in sCtl.turbineData track by $index">
+                        <p>{{turb.turbineName}}, Serial Number: {{turb.serialNumber}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
