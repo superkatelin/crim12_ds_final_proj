@@ -9,7 +9,7 @@ Started: 10/18
   
 Completed: 10/19
 
-API [==        ] 20%
+API [=======   ] 70%
  
 Started: 10/19
 
@@ -25,9 +25,41 @@ Progress:
 <li>Sensor Deployed</li>
 <li>Turbine Deployed</li>
 <li>Sensor Time Series</li>
+<li>SLA Notes</li>
 </ul>
+</li>
+<li>Made API Endpoints for lots of stuff, will make more as needed</li>
 </ul>
-  
+
+Angular [==        ] 18%
+
+Started: 10/21
+
+Progress:
+
+<ul>
+<li>Code has been written for client html page</li>
+</ul>
+
+HTML [==        ] 18%
+
+Started: 10/21
+
+Progress:
+
+<ul>
+<li>Made HTML Pages for:<ul>
+<li>Index - Not real content yet.</li>
+<li>Client</li>
+</ul>
+</li>
+
+CSS [= ] 10%
+
+Started: 10/21
+
+It exists.
+ 
 
 Project Description:
 
